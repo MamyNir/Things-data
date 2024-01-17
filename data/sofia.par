@@ -1,0 +1,58 @@
+# Global settings
+
+pipeline.verbose           =  false
+pipeline.pedantic          =  true
+pipeline.threads           =  0
+
+
+# Input
+
+input.data                 =  cube/NGC_3198_NA_CUBE_THINGS.fits	
+input.gain                 =  false
+input.noise                =  true
+input.invert               =  false
+
+# Noise scaling
+
+scaleNoise.enable          =  true 
+scaleNoise.mode            =  spectral
+scaleNoise.statistic       =  mad
+scaleNoise.fluxRange       =  negative
+scaleNoise.windowXY        =  25
+scaleNoise.windowZ         =  15
+scaleNoise.gridXY          =  0
+scaleNoise.gridZ           =  0
+scaleNoise.interpolate     =  false
+scaleNoise.scfind          =  false
+
+
+# S+C finder
+
+scfind.enable              =  true
+scfind.kernelsXY           =  0, 3, 6
+scfind.kernelsZ            =  0, 3, 7, 15
+scfind.threshold           =  5.0
+scfind.replacement         =  2.0
+scfind.statistic           =  mad
+scfind.fluxRange           =  negative
+
+
+# Parameterisation
+
+parameter.enable           =  true
+parameter.wcs              =  true
+parameter.physical         =  false
+parameter.prefix           =  SoFiA
+parameter.offset           =  false
+
+
+# Output
+
+output.directory           =  /home/m51/Things-data/data/sofia-output
+output.filename            =  NGC_3198
+output.writeCatASCII       =  true
+output.writeCatXML         =  true
+output.writeNoise          =  true
+output.writeRawMask        =  true
+output.writeMoments        =  true
+output.overwrite           =  true

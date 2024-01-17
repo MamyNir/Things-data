@@ -8,22 +8,6 @@ pipeline.threads           =  0
 # Input
 
 input.data                 =  cube/NGC_3198_NA_CUBE_THINGS.fits	
-input.gain                 =  false
-input.noise                =  true
-input.invert               =  false
-
-# Noise scaling
-
-scaleNoise.enable          =  true 
-scaleNoise.mode            =  spectral
-scaleNoise.statistic       =  mad
-scaleNoise.fluxRange       =  negative
-scaleNoise.windowXY        =  25
-scaleNoise.windowZ         =  15
-scaleNoise.gridXY          =  0
-scaleNoise.gridZ           =  0
-scaleNoise.interpolate     =  false
-scaleNoise.scfind          =  false
 
 
 # S+C finder

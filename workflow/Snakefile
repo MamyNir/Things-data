@@ -8,19 +8,20 @@ rule all:
 
 rule download_data:
     output:
-        "data/cube/NGC_3198_NA_CUBE_THINGS.FITS",
+        "data/cube/NGC_3198_NA_CUBE_THINGS.fits",
     shell:
         """
-       wget -P data/cube {config[datacube_path]}
-       """
+        wget -P data/cube {config[datacube_path]}
+        """
+
 
 rule run_sofia:
     input:
         "data/cube/NGC_3198_NA_CUBE_THINGS.fits",
     output:
+        "data/sofia-output/NGC_3198_mom0.fits",
         "data/sofia-output/NGC_3198_mom1.fits",
-        "data/sofia-output/NGC_3198_mom2.fits",
-        "data/sofia-output/NGC_3198_mom0.fits"
+        "data/sofia-output/NGC_3198_mom2.fits"
     shell:
         "sofia data/sofia.par"
 

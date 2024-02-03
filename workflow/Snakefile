@@ -1,0 +1,26 @@
+
+rule all:
+    input:
+        "results/plots/moment0_map.png"
+
+
+rule run_sofia:
+    input:
+        "data/cube/NGC_3198_NA_CUBE_THINGS.fits",
+    output:
+        "data/sofia-output/NGC_3198_mom1.fits",
+        "data/sofia-output/NGC_3198_mom2.fits",
+        "data/sofia-output/NGC_3198_mom0.fits"
+    shell:
+        "sofia data/sofia.par"
+
+
+rule plot_moment0:
+    input:
+        "data/sofia-output/NGC_3198_mom0.fits",
+    output:
+        "results/plots/moment0_map.png",
+    conda:
+        "envs/plotfits.yml"
+    script:
+        "scripts/plot_moment0.py"

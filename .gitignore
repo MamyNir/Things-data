@@ -1,1 +1,7 @@
 data/cube/
+data/sofia-output/
+
+.snakemake/
+
+workflow/.snakemake
+

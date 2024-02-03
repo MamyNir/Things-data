@@ -7,8 +7,8 @@ pipeline.threads           =  0
 
 # Input
 
-input.data                 =  cube/NGC_3198_NA_CUBE_THINGS.fits	
-
+input.data                 =  data/cube/NGC_3198_NA_CUBE_THINGS.fits  
+input.region		   = [500, 900, 100, 900, 0, 72]
 
 # S+C finder
 

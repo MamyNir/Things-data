@@ -1,8 +1,18 @@
+configfile: "config/config.yml"
+
 
 rule all:
     input:
         "results/plots/moment0_map.png"
 
+
+rule download_data:
+    output:
+        "data/cube/NGC_3198_NA_CUBE_THINGS.FITS",
+    shell:
+        """
+       wget -P data/cube {config[datacube_path]}
+       """
 
 rule run_sofia:
     input:

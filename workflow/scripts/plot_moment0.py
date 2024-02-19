@@ -23,13 +23,6 @@ my_viridis = plt.colormaps.get_cmap('viridis_r').with_extremes(under='white')
 im = ax.imshow(hdu.data, cmap = my_viridis, vmin = mask_threshold, vmax=2.2e3, origin = 'lower')
 
 
-# Select region to plot
-central_pixel_x = 512
-central_pixel_y = 413
-deg_per_pixel = 0.000416666676800
-span = 0.25 / deg_per_pixel
-
-
 # Overlay contours
 plt.contour(
     hdu.data,
@@ -41,14 +34,21 @@ plt.contour(
 
 # Add a colorbar
 cbar = plt.colorbar(im, pad=.07)
-cbar.set_label('Velocity (km/s)', size=16)
+cbar.set_label('Mass density', size=16)
+
+
+# Select region to plot
+central_pixel_x = 512
+central_pixel_y = 413
+deg_per_pixel = 0.000416666676800
+span = 0.25 / deg_per_pixel
 
 
 # Set label
 ax.set( xlim = (central_pixel_x - span / 2, central_pixel_x + span / 2),
         ylim = (central_pixel_y - span / 2, central_pixel_y + span / 2),
-        xlabel = 'Right Ascension',
-        ylabel = 'Declination',
+        xlabel = 'Right Ascension (J2000)',
+        ylabel = 'Declination (J2000)',
         title = 'MOMENT 0 MAP')
 plt.grid(color='black', alpha=0.25, ls='solid')
 

@@ -3,7 +3,9 @@ configfile: "config/config.yml"
 
 rule all:
     input:
-        "results/plots/moment0_map.png"
+        "results/plots/moment0_map.png",
+        "results/plots/moment1_map.png",
+        "results/plots/moment2_map.png"
 
 
 rule download_data:
@@ -35,3 +37,26 @@ rule plot_moment0:
         "envs/plotfits.yml"
     script:
         "scripts/plot_moment0.py"
+
+
+rule plot_moment1:
+    input:
+        "data/sofia-output/NGC_3198_mom1.fits",
+    output:
+        "results/plots/moment1_map.png"
+    conda:
+        "envs/plotfits.yml"
+    script:
+        "scripts/plot_moment1.py"
+
+
+rule plot_moment2:
+    input:
+        "data/sofia-output/NGC_3198_mom2.fits",
+    output:
+        "results/plots/moment2_map.png"
+    conda:
+        "envs/plotfits.yml"
+    script:
+        "scripts/plot_moment2.py"
+

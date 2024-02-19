@@ -32,7 +32,7 @@ parameter.offset           =  false
 
 # Output
 
-output.directory           =  /home/m51/Things-data/data/sofia-output
+output.directory           =  data/sofia-output
 output.filename            =  NGC_3198
 output.writeCatASCII       =  true
 output.writeCatXML         =  true
